@@ -1,0 +1,16 @@
+C:\Develop\MBToolManager\MBToolManager\MVVMBase\bin\Debug\MVVMBase.dll
+C:\Develop\MBToolManager\MBToolManager\MVVMBase\bin\Debug\MVVMBase.pdb
+C:\Develop\MBToolManager\MBToolManager\MVVMBase\obj\Debug\MVVMBase.csproj.CoreCompileInputs.cache
+C:\Develop\MBToolManager\MBToolManager\MVVMBase\obj\Debug\MVVMBase.dll
+C:\Develop\MBToolManager\MBToolManager\MVVMBase\obj\Debug\MVVMBase.pdb
+C:\Develop\MBToolManager\MBToolManager\MVVMBase\obj\Debug\MVVMBase.csprojAssemblyReference.cache
+E:\Programming\WPF\MBToolManager\MVVMBase\bin\Debug\MVVMBase.dll
+E:\Programming\WPF\MBToolManager\MVVMBase\bin\Debug\MVVMBase.pdb
+E:\Programming\WPF\MBToolManager\MVVMBase\obj\Debug\MVVMBase.csproj.CoreCompileInputs.cache
+E:\Programming\WPF\MBToolManager\MVVMBase\obj\Debug\MVVMBase.dll
+E:\Programming\WPF\MBToolManager\MVVMBase\obj\Debug\MVVMBase.pdb
+E:\Programming\WPF\MyNotes\MVVMBase\bin\Debug\MVVMBase.dll
+E:\Programming\WPF\MyNotes\MVVMBase\bin\Debug\MVVMBase.pdb
+E:\Programming\WPF\MyNotes\MVVMBase\obj\Debug\MVVMBase.csproj.CoreCompileInputs.cache
+E:\Programming\WPF\MyNotes\MVVMBase\obj\Debug\MVVMBase.dll
+E:\Programming\WPF\MyNotes\MVVMBase\obj\Debug\MVVMBase.pdb
