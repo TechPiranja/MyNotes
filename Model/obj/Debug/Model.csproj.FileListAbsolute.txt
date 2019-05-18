@@ -1,5 +1,6 @@
 E:\Programming\WPF\MyNotes\Model\bin\Debug\Model.dll
 E:\Programming\WPF\MyNotes\Model\bin\Debug\Model.pdb
+E:\Programming\WPF\MyNotes\Model\obj\Debug\Model.csprojAssemblyReference.cache
 E:\Programming\WPF\MyNotes\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 E:\Programming\WPF\MyNotes\Model\obj\Debug\Model.dll
 E:\Programming\WPF\MyNotes\Model\obj\Debug\Model.pdb

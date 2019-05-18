@@ -29,7 +29,7 @@ namespace View.Helper
             //cfgRepo.Init();
 
             // Register ViewModel
-            builder.RegisterAssemblyTypes(typeof(MainViewModel).Assembly)
+            builder.RegisterAssemblyTypes(typeof(TrayViewModel).Assembly)
                 .Where(t => t.Name.EndsWith("ViewModel") && !t.Name.StartsWith("Mock")).AsImplementedInterfaces();
 
             // register instance of Messenger as its implemented interface as a singleton class.

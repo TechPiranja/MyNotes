@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Hardcodet.Wpf.TaskbarNotification, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hardcodet.NotifyIcon.Wpf.1.0.8\lib\net451\Hardcodet.Wpf.TaskbarNotification.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,7 +47,10 @@
     <Compile Include="Helper\MessengerConstants.cs" />
     <Compile Include="Interfaces\IMainViewModel.cs" />
     <Compile Include="MainViewModel.cs" />
+    <Compile Include="Interfaces\ITrayViewModel.cs" />
     <Compile Include="MockViewModels\MockMainViewModel.cs" />
+    <Compile Include="TrayViewModel.cs" />
+    <Compile Include="MockViewModels\MockTrayViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -59,6 +65,9 @@
       <Project>{9F64202A-C1AE-4698-B2B4-A8097C2619A7}</Project>
       <Name>MVVMBase</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -2,6 +2,6 @@
 {
     public interface IDialogService
     {
-        void ShowGetConfigDialog(string path);
+        void ShowMainWindow();
     }
 }

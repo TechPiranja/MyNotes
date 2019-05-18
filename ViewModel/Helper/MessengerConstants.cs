@@ -2,6 +2,6 @@
 {
     public static class MessengerConstants
     {
-        public const string test = "test";
+        public const string OpenMainWindow = "OpenMainWindow";
     }
 }
