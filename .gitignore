@@ -410,3 +410,9 @@ MigrationBackup/
     About
 
 /MyNotes/bin/Debug/
+
+*/**/bin/Debug
+*/**/bin/Release
+*/**/obj/Debug
+*/**/obj/Release
+**/Debug/*
