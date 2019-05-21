@@ -15,15 +15,15 @@ namespace ViewModel
         public TrayViewModel(IMessenger messenger)
         {
             _messenger = messenger;
-            OpenMainWindowCommand = Factory.Create(p => OpenMainWindow());
+            OpenMainWindowCommand = Factory.Create(p => _messenger.Send(true, MessengerConstants.OpenMainWindow));
+            OpenQuickNoteCommand = Factory.Create(p => _messenger.Send(true, MessengerConstants.OpenQuickNoteDialog));
             ExitCommand = Factory.Create(p => Exit());
         }
-
-        private void OpenMainWindow() => _messenger.Send(true, MessengerConstants.OpenMainWindow);
 
         private void Exit() => Application.Current.Shutdown();
 
         public ICommand OpenMainWindowCommand { get; set; }
+        public ICommand OpenQuickNoteCommand { get; set; }
         public ICommand ExitCommand { get; set; }
-    }
+}
 }

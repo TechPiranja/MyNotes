@@ -5,16 +5,16 @@ winexe
 C#
 .cs
 E:\Programming\WPF\MyNotes\MyNotes\obj\Debug\
-MyNotes
+View
 none
 false
 DEBUG;TRACE
 E:\Programming\WPF\MyNotes\MyNotes\App.xaml
-2-1521783673
+3961960634
 
-12977888522
+13-1446882551
 132-232834216
-MainWindow.xaml;Tray.xaml;
+Dialogs\QuickNote.xaml;MainWindow.xaml;Tray.xaml;
 
-True
+False
 

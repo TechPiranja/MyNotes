@@ -48,9 +48,11 @@ E:\Programming\WPF\MyNotes\MyNotes\obj\Debug\App.baml
 E:\Programming\WPF\MyNotes\MyNotes\obj\Debug\MainWindow.baml
 E:\Programming\WPF\MyNotes\MyNotes\obj\Debug\Tray.baml
 E:\Programming\WPF\MyNotes\MyNotes\obj\Debug\MyNotes.g.resources
-E:\Programming\WPF\MyNotes\MyNotes\obj\Debug\MyNotes.Properties.Resources.resources
 E:\Programming\WPF\MyNotes\MyNotes\obj\Debug\MyNotes.csproj.GenerateResource.cache
 E:\Programming\WPF\MyNotes\MyNotes\obj\Debug\MyNotes.csproj.CoreCompileInputs.cache
 E:\Programming\WPF\MyNotes\MyNotes\obj\Debug\MyNotes.csproj.CopyComplete
 E:\Programming\WPF\MyNotes\MyNotes\obj\Debug\MyNotes.exe
 E:\Programming\WPF\MyNotes\MyNotes\obj\Debug\MyNotes.pdb
+E:\Programming\WPF\MyNotes\MyNotes\obj\Debug\Dialogs\QuickNote.g.cs
+E:\Programming\WPF\MyNotes\MyNotes\obj\Debug\Dialogs\QuickNote.baml
+E:\Programming\WPF\MyNotes\MyNotes\obj\Debug\View.Properties.Resources.resources
