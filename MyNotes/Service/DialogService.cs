@@ -1,5 +1,4 @@
 ﻿using MVVMBase.MessengerPattern;
-using MyNotes;
 using View.Dialogs;
 //using View.Dialogs;
 using View.Service.Interfaces;

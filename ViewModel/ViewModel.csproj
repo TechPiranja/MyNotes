@@ -49,9 +49,14 @@
   <ItemGroup>
     <Compile Include="Helper\MessengerConstants.cs" />
     <Compile Include="Interfaces\IMainViewModel.cs" />
+    <Compile Include="Interfaces\INoteSaverService.cs" />
+    <Compile Include="Interfaces\IQuickNoteViewModel.cs" />
     <Compile Include="MainViewModel.cs" />
     <Compile Include="Interfaces\ITrayViewModel.cs" />
     <Compile Include="MockViewModels\MockMainViewModel.cs" />
+    <Compile Include="MockViewModels\MockQuickNoteViewModel.cs" />
+    <Compile Include="QuickNoteViewModel.cs" />
+    <Compile Include="Services\NoteSaverService.cs" />
     <Compile Include="TrayViewModel.cs" />
     <Compile Include="MockViewModels\MockTrayViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

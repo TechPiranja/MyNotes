@@ -15,5 +15,9 @@ namespace View.Locator
         public IMainViewModel MainViewModel => IsInDesignMode()
             ? new MockMainViewModel()
             : IocContainer.Instance.Container.Resolve<IMainViewModel>();
+
+        public IQuickNoteViewModel QuickNoteViewModel => IsInDesignMode()
+           ? new MockQuickNoteViewModel()
+           : IocContainer.Instance.Container.Resolve<IQuickNoteViewModel>();
     }
 }

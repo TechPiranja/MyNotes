@@ -25,5 +25,5 @@ namespace ViewModel
         public ICommand OpenMainWindowCommand { get; set; }
         public ICommand OpenQuickNoteCommand { get; set; }
         public ICommand ExitCommand { get; set; }
-}
+    }
 }

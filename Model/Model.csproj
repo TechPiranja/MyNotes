@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IMainModel.cs" />
+    <Compile Include="Interfaces\IQuickNoteModel.cs" />
     <Compile Include="Interfaces\ITrayModel.cs" />
     <Compile Include="MainModel.cs" />
+    <Compile Include="QuickNoteModel.cs" />
     <Compile Include="TrayModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

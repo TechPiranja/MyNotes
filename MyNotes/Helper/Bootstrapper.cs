@@ -4,6 +4,8 @@ using View.Locator;
 using View.Service;
 using View.Service.Interfaces;
 using ViewModel;
+using ViewModel.Interfaces;
+using ViewModel.Services;
 using IMessenger = MVVMBase.MessengerPattern.IMessenger;
 using Messenger = MVVMBase.MessengerPattern.Messenger;
 
@@ -43,6 +45,9 @@ namespace View.Helper
 
             // Register factories and builder
             // Register helper
+
+            // Register Services
+            builder.RegisterType<NoteSaverService>().AsImplementedInterfaces().SingleInstance();
 
             // register ViewModelLocator
             builder.RegisterType<ViewModelLocator>().SingleInstance();
