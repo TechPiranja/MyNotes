@@ -1,7 +1,7 @@
 ﻿using MVVMBase.MessengerPattern;
 using View.Dialogs;
 //using View.Dialogs;
-using View.Service.Interfaces;
+using View.Services.Interfaces;
 using ViewModel.Helper;
 
 namespace View.Service
@@ -23,7 +23,7 @@ namespace View.Service
         public void ShowMainWindow()
         {
             _mainWindow = new MainWindow();
-            _mainWindow.Show();
+            _mainWindow.ShowDialog();
         }
 
         public void ShowQuickNoteDialog()

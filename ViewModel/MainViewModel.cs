@@ -4,6 +4,8 @@ using MVVMBase;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Windows;
+using System.Windows.Input;
 using ViewModel.Interfaces;
 
 namespace ViewModel
@@ -15,8 +17,12 @@ namespace ViewModel
         public MainViewModel(INoteTreeViewBuilder noteTreeViewBuilder)
         {
             _noteTreeViewBuilder = noteTreeViewBuilder;
+
+            CloseCommand = Factory.Create(p => Exit());
             NoteFolder = _noteTreeViewBuilder.Build(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\Notes");
         }
+
+        private void Exit() => Application.Current.Shutdown();
 
         public ICollection<INoteTreeViewModel> NoteFolder
         {
@@ -27,5 +33,7 @@ namespace ViewModel
                 Model.NoteFolder = value; OnPropertyChanged();
             }
         }
+
+        public ICommand CloseCommand { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 
 namespace View
 {
@@ -10,6 +11,11 @@ namespace View
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Drag(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
     }
 }

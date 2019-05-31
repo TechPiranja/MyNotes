@@ -105,8 +105,8 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Service\DialogService.cs" />
-    <Compile Include="Service\Interface\IDialogService.cs" />
+    <Compile Include="Services\DialogService.cs" />
+    <Compile Include="Services\Interface\IDialogService.cs" />
     <Page Include="Dialogs\QuickNote.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

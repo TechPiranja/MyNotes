@@ -1,7 +1,8 @@
-﻿namespace View.Service.Interfaces
+﻿namespace View.Services.Interfaces
 {
     public interface IDialogService
     {
         void ShowMainWindow();
+        void ShowQuickNoteDialog();
     }
 }

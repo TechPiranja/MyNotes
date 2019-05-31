@@ -2,7 +2,7 @@
 using System.Linq;
 using View.Locator;
 using View.Service;
-using View.Service.Interfaces;
+using View.Services.Interfaces;
 using ViewModel;
 using ViewModel.Builder;
 using ViewModel.Interfaces;

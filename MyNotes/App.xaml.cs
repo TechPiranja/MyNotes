@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using System.Windows;
 using View.Helper;
-using View.Service.Interfaces;
+using View.Services.Interfaces;
 
 namespace View
 {
