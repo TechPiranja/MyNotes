@@ -47,10 +47,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builder\NoteTreeViewBuilder.cs" />
     <Compile Include="Helper\MessengerConstants.cs" />
     <Compile Include="Interfaces\IMainViewModel.cs" />
     <Compile Include="Interfaces\INoteSaverService.cs" />
     <Compile Include="Interfaces\IQuickNoteViewModel.cs" />
+    <Compile Include="Interfaces\INoteTreeViewBuilder.cs" />
     <Compile Include="MainViewModel.cs" />
     <Compile Include="Interfaces\ITrayViewModel.cs" />
     <Compile Include="MockViewModels\MockMainViewModel.cs" />
@@ -61,9 +63,7 @@
     <Compile Include="MockViewModels\MockTrayViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Builder\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{216F0702-AE5C-4517-A424-579C27F8DA6A}</Project>

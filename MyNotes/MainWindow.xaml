@@ -3,12 +3,32 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:View"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         DataContext="{Binding Path=MainViewModel, Source={StaticResource ViewModelLocator}}">
-    <Grid>
-        <TextBlock Text="Hello World!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50"/>
+    <Grid MinWidth="220">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.4*"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TreeView ItemsSource="{Binding NoteFolder}">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Items}">
+                    <StackPanel Orientation="Horizontal">
+                        <!--<CheckBox IsChecked="{Binding IsChecked}" />-->
+                        <fa:ImageAwesome Icon="{Binding ImageSource}" Height="15" Foreground="Orange" Margin="5,0"/>
+                        <TextBlock Text="{Binding Name}" />
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
     </Grid>
 </Window>
 

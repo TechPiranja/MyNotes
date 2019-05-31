@@ -14,7 +14,7 @@
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu>
                     <MenuItem Command="{Binding ExitCommand}" Header="Exit" />
-                    <MenuItem Command="{Binding OpenMainWindowCommand}" Header="Menu" />
+                    <MenuItem Command="{Binding OpenMainWindowCommand}" Header="MyNotes" />
                     <MenuItem Command="{Binding OpenQuickNoteCommand}" Header="QuickNote" />
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>

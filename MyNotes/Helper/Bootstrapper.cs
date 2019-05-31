@@ -4,6 +4,7 @@ using View.Locator;
 using View.Service;
 using View.Service.Interfaces;
 using ViewModel;
+using ViewModel.Builder;
 using ViewModel.Interfaces;
 using ViewModel.Services;
 using IMessenger = MVVMBase.MessengerPattern.IMessenger;
@@ -44,6 +45,7 @@ namespace View.Helper
             //builder.RegisterType<CfgRepository>().AsImplementedInterfaces();
 
             // Register factories and builder
+            builder.RegisterType<NoteTreeViewBuilder>().AsImplementedInterfaces().SingleInstance();
             // Register helper
 
             // Register Services
