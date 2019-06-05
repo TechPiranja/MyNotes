@@ -19,6 +19,15 @@ namespace ViewModel
             _noteTreeViewBuilder = noteTreeViewBuilder;
 
             CloseCommand = Factory.Create(p => Exit());
+            CheckNoteFolder();            
+        }
+
+        private void CheckNoteFolder()
+        {
+            var notePath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\Notes";
+            if (!Directory.Exists(notePath))
+                Directory.CreateDirectory("Notes");
+
             NoteFolder = _noteTreeViewBuilder.Build(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\Notes");
         }
 

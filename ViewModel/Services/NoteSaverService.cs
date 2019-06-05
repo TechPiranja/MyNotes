@@ -22,14 +22,13 @@ namespace ViewModel.Services
         public void SaveQuickNote(string title, string note)
         {
             var notePath = NoteFolderPath + "\\" + DateTime.Now.ToShortDateString() + ".txt";
-            if (!File.Exists(notePath))
-                File.CreateText(notePath);
 
             using (StreamWriter writer = new StreamWriter(notePath, true))
             {
                 writer.WriteLine(title);
                 writer.WriteLine(note);
                 writer.WriteLine();
+                writer.Close();
             }
         }
 
