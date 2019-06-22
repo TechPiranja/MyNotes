@@ -6,14 +6,15 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:View"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:uc="clr-namespace:View.UserControls"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         mc:Ignorable="d" AllowsTransparency="True"
         Title="MyNotes" Height="450" Width="800" WindowStyle="None"
         DataContext="{Binding Path=MainViewModel, Source={StaticResource ViewModelLocator}}">
     <Grid MinWidth="220">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="226*"/>
-            <ColumnDefinition Width="533*" />
-            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="5*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -28,7 +29,13 @@
                 <materialDesign:PackIcon Kind="Close" Height="25" Width="25" VerticalAlignment="Center" />
             </Button>
         </DockPanel>
-        <TreeView ItemsSource="{Binding NoteFolder}" Grid.Row="1">
+        <TreeView x:Name="TreeView" ItemsSource="{Binding NoteFolder}" Grid.Row="1" >
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectedItemChanged">
+                    <i:InvokeCommandAction Command="{Binding GetNoteInformationCommand}" 
+                    CommandParameter="{Binding ElementName=TreeView,Path=SelectedItem}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate ItemsSource="{Binding Items}">
                     <StackPanel Orientation="Horizontal">
@@ -39,57 +46,6 @@
                 </HierarchicalDataTemplate>
             </TreeView.ItemTemplate>
         </TreeView>
-        <ScrollViewer Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2">
-            <StackPanel>
-                <GroupBox  Header="Card Group Box"  Style="{DynamicResource MaterialDesignCardGroupBox}" Margin="16">
-                    <GroupBox.HeaderTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="ImageArea" Height="32" Width="32" VerticalAlignment="Center" />
-                                <TextBlock Margin="8,0,0,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}" Text="{Binding}" />
-                            </StackPanel>
-                        </DataTemplate>
-                    </GroupBox.HeaderTemplate>
-                    <TextBlock Margin="6,6,6,6" TextWrapping="Wrap">
-                    Short loin picanha boudin pork belly. Ground round porchetta biltong, cow t-bone tri-tip strip steak chuck filet mignon 
-                    jowl turducken. Landjaeger strip steak pork chop, jowl sirloin pork capicola andouille. Kevin ribeye tongue, drumstick 
-                    hamburger frankfurter t-bone corned beef beef biltong cow venison. Biltong picanha bresaola pork belly, filet mignon 
-                    spare ribs doner pork chop kielbasa. Swine flank drumstick pork belly pancetta spare ribs rump filet mignon.
-                    </TextBlock>
-                </GroupBox>
-                <GroupBox  Header="Card Group Box"  Style="{DynamicResource MaterialDesignCardGroupBox}" Margin="16">
-                    <GroupBox.HeaderTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="ImageArea" Height="32" Width="32" VerticalAlignment="Center" />
-                                <TextBlock Margin="8,0,0,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}" Text="{Binding}" />
-                            </StackPanel>
-                        </DataTemplate>
-                    </GroupBox.HeaderTemplate>
-                    <TextBlock Margin="6,6,6,6" TextWrapping="Wrap">
-                    Short loin picanha boudin pork belly. Ground round porchetta biltong, cow t-bone tri-tip strip steak chuck filet mignon 
-                    jowl turducken. Landjaeger strip steak pork chop, jowl sirloin pork capicola andouille. Kevin ribeye tongue, drumstick 
-                    hamburger frankfurter t-bone corned beef beef biltong cow venison. Biltong picanha bresaola pork belly, filet mignon 
-                    spare ribs doner pork chop kielbasa. Swine flank drumstick pork belly pancetta spare ribs rump filet mignon.
-                    </TextBlock>
-                </GroupBox>
-                <GroupBox  Header="Card Group Box"  Style="{DynamicResource MaterialDesignCardGroupBox}" Margin="16">
-                    <GroupBox.HeaderTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="ImageArea" Height="32" Width="32" VerticalAlignment="Center" />
-                                <TextBlock Margin="8,0,0,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}" Text="{Binding}" />
-                            </StackPanel>
-                        </DataTemplate>
-                    </GroupBox.HeaderTemplate>
-                    <TextBlock Margin="6,6,6,6" TextWrapping="Wrap">
-                    Short loin picanha boudin pork belly. Ground round porchetta biltong, cow t-bone tri-tip strip steak chuck filet mignon 
-                    jowl turducken. Landjaeger strip steak pork chop, jowl sirloin pork capicola andouille. Kevin ribeye tongue, drumstick 
-                    hamburger frankfurter t-bone corned beef beef biltong cow venison. Biltong picanha bresaola pork belly, filet mignon 
-                    spare ribs doner pork chop kielbasa. Swine flank drumstick pork belly pancetta spare ribs rump filet mignon.
-                    </TextBlock>
-                </GroupBox>
-            </StackPanel>
-        </ScrollViewer>
+        <uc:NoteInformation Grid.Column="1" Grid.Row="1"/>
     </Grid>
 </Window>

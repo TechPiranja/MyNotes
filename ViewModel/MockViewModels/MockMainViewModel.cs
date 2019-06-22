@@ -7,5 +7,6 @@ namespace ViewModel.MockViewModels
     public class MockMainViewModel : IMainViewModel
     {
         public ICollection<INoteTreeViewModel> NoteFolder { get; set; }
+        public object SelectedNoteFile { get; set; }
     }
 }

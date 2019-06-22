@@ -1,11 +1,14 @@
 ﻿using Model;
 using Model.Interfaces;
 using MVVMBase;
+using MVVMBase.MessengerPattern;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Input;
+using ViewModel.Helper;
 using ViewModel.Interfaces;
 
 namespace ViewModel
@@ -13,13 +16,21 @@ namespace ViewModel
     public class MainViewModel : ViewModelBase<IMainModel, MainModel>, IMainViewModel
     {
         private readonly INoteTreeViewBuilder _noteTreeViewBuilder;
+        private readonly IMessenger _messenger;
 
-        public MainViewModel(INoteTreeViewBuilder noteTreeViewBuilder)
+        public MainViewModel(INoteTreeViewBuilder noteTreeViewBuilder, IMessenger messenger)
         {
             _noteTreeViewBuilder = noteTreeViewBuilder;
-
+            _messenger = messenger;
             CloseCommand = Factory.Create(p => Exit());
-            CheckNoteFolder();            
+            GetNoteInformationCommand = Factory.Create(p => GetNoteInformation(p));
+            CheckNoteFolder();
+        }
+
+        private void GetNoteInformation(object p)
+        {
+            var noteInformation = (NoteTreeViewModel)p;
+            _messenger.Send(noteInformation, MessengerConstants.ShowNoteInformation);
         }
 
         private void CheckNoteFolder()
@@ -44,5 +55,7 @@ namespace ViewModel
         }
 
         public ICommand CloseCommand { get; set; }
+
+        public ICommand GetNoteInformationCommand { get; set; }
     }
 }

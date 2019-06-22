@@ -42,10 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IMainModel.cs" />
+    <Compile Include="Interfaces\INote.cs" />
     <Compile Include="Interfaces\INoteTreeViewModel.cs" />
     <Compile Include="Interfaces\IQuickNoteModel.cs" />
     <Compile Include="Interfaces\ITrayModel.cs" />
+    <Compile Include="Interfaces\INoteInformationModel.cs" />
     <Compile Include="MainModel.cs" />
+    <Compile Include="Note.cs" />
+    <Compile Include="NoteInformationModel.cs" />
     <Compile Include="NoteTreeViewModel.cs" />
     <Compile Include="QuickNoteModel.cs" />
     <Compile Include="TrayModel.cs" />

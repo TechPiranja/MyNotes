@@ -53,12 +53,15 @@
     <Compile Include="Interfaces\INoteSaverService.cs" />
     <Compile Include="Interfaces\IQuickNoteViewModel.cs" />
     <Compile Include="Interfaces\INoteTreeViewBuilder.cs" />
+    <Compile Include="Interfaces\INoteInformationViewModel.cs" />
     <Compile Include="MainViewModel.cs" />
     <Compile Include="Interfaces\ITrayViewModel.cs" />
     <Compile Include="MockViewModels\MockMainViewModel.cs" />
+    <Compile Include="MockViewModels\MockNoteInformationViewModel.cs" />
     <Compile Include="MockViewModels\MockQuickNoteViewModel.cs" />
+    <Compile Include="NoteInformationViewModel.cs" />
     <Compile Include="QuickNoteViewModel.cs" />
-    <Compile Include="Services\NoteSaverService.cs" />
+    <Compile Include="Services\NoteService.cs" />
     <Compile Include="TrayViewModel.cs" />
     <Compile Include="MockViewModels\MockTrayViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

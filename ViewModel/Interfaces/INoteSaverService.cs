@@ -1,7 +1,11 @@
-﻿namespace ViewModel.Interfaces
+﻿using Model.Interfaces;
+using System.Collections.Generic;
+
+namespace ViewModel.Interfaces
 {
-    public interface INoteSaverService
+    public interface INoteService
     {
         void SaveQuickNote(string title, string note);
+        ICollection<INote> GetNotesFromFile(string path);
     }
 }

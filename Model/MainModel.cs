@@ -6,5 +6,6 @@ namespace Model
     public class MainModel : IMainModel
     {
         public ICollection<INoteTreeViewModel> NoteFolder { get; set; }
+        public object SelectedNoteFile { get; set; }
     }
 }

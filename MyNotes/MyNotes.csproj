@@ -107,6 +107,9 @@
     </Compile>
     <Compile Include="Services\DialogService.cs" />
     <Compile Include="Services\Interface\IDialogService.cs" />
+    <Compile Include="UserControls\NoteInformation.xaml.cs">
+      <DependentUpon>NoteInformation.xaml</DependentUpon>
+    </Compile>
     <Page Include="Dialogs\QuickNote.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -128,6 +131,10 @@
       <DependentUpon>Tray.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserControls\NoteInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -158,9 +165,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Converter\" />
-    <Folder Include="UserControls\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{216F0702-AE5C-4517-A424-579C27F8DA6A}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MVVMBase\MVVMBase.csproj">
       <Project>{9F64202A-C1AE-4698-B2B4-A8097C2619A7}</Project>
       <Name>MVVMBase</Name>

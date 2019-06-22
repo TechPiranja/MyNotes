@@ -11,17 +11,17 @@ namespace ViewModel
     public class QuickNoteViewModel : ViewModelBase<IQuickNoteModel, QuickNoteModel>, IQuickNoteViewModel
     {
         private readonly IMessenger _messenger;
-        private readonly INoteSaverService _noteSaverService;
-        public QuickNoteViewModel(IMessenger messenger, INoteSaverService noteSaverService)
+        private readonly INoteService _noteService;
+        public QuickNoteViewModel(IMessenger messenger, INoteService noteSerivce)
         {
             _messenger = messenger;
-            _noteSaverService = noteSaverService;
+            _noteService = noteSerivce;
             SaveNoteCommand = Factory.Create(p => SaveNote());
         }
 
         private void SaveNote()
         {
-            _noteSaverService.SaveQuickNote(Title, Note);
+            _noteService.SaveQuickNote(Title, Note);
         }
 
         public ICommand SaveNoteCommand { get; set; }

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace ViewModel.Interfaces
 {
-    public interface IMainViewModel
+    public interface INoteInformationViewModel
     {
-        ICollection<INoteTreeViewModel> NoteFolder{ get; set; }
+        ICollection<INote> NoteList { get; set; }
     }
 }

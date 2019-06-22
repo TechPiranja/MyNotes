@@ -4,3 +4,9 @@ E:\Programming\WPF\MyNotes\Model\obj\Debug\Model.csprojAssemblyReference.cache
 E:\Programming\WPF\MyNotes\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 E:\Programming\WPF\MyNotes\Model\obj\Debug\Model.dll
 E:\Programming\WPF\MyNotes\Model\obj\Debug\Model.pdb
+C:\Programming\MyNotes\Model\bin\Debug\Model.dll
+C:\Programming\MyNotes\Model\bin\Debug\Model.pdb
+C:\Programming\MyNotes\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Programming\MyNotes\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Programming\MyNotes\Model\obj\Debug\Model.dll
+C:\Programming\MyNotes\Model\obj\Debug\Model.pdb

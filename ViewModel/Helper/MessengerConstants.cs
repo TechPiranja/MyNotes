@@ -4,5 +4,7 @@
     {
         public const string OpenMainWindow = "OpenMainWindow";
         public const string OpenQuickNoteDialog = "OpenQuickNoteDialog";
+
+        public const string ShowNoteInformation = "ShowNoteData";
     }
 }
