@@ -20,13 +20,20 @@ namespace ViewModel.Services
         private void CheckNoteFolder()
         {
             NoteFolderPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\Notes";
+            NoteYearPath = NoteFolderPath + "\\" + DateTime.Now.Year.ToString();
+            NoteMonthPath = NoteYearPath + "\\" + DateTime.Now.ToString("MMM");
+
             if (!Directory.Exists(NoteFolderPath))
                 Directory.CreateDirectory("Notes");
+            if (!Directory.Exists(NoteYearPath))
+                Directory.CreateDirectory(NoteYearPath);
+            if (!Directory.Exists(NoteMonthPath))
+                Directory.CreateDirectory(NoteMonthPath);
         }
 
         public void SaveQuickNote(string title, string note)
         {
-            var notePath = NoteFolderPath + "\\" + DateTime.Now.ToShortDateString() + ".xml";
+            var notePath = NoteMonthPath + "\\" + DateTime.Now.ToShortDateString() + ".xml";
 
             XmlDocument xmlDoc = new XmlDocument();
             if (File.Exists(notePath))
@@ -52,6 +59,9 @@ namespace ViewModel.Services
 
         public ICollection<INote> GetNotesFromFile(string path)
         {
+            if (File.GetAttributes(path).HasFlag(FileAttributes.Directory))
+                return null;
+
             var noteList = new Collection<INote>();
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(path);
@@ -62,7 +72,7 @@ namespace ViewModel.Services
                 var noteItem = new Note
                 {
                     Title = note.Attributes["title"].Value,
-                    Content = note.Attributes["title"].InnerText
+                    Content = note.InnerText
                 };
 
                 noteList.Add(noteItem);
@@ -72,5 +82,7 @@ namespace ViewModel.Services
         }
 
         private string NoteFolderPath { get; set; }
+        private string NoteYearPath { get; set; }
+        private string NoteMonthPath { get; set; }
     }
 }
