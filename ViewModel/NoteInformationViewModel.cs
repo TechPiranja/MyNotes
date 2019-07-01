@@ -5,6 +5,7 @@ using MVVMBase.MessengerPattern;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Input;
 using System.Xml;
 using ViewModel.Helper;
 using ViewModel.Interfaces;
@@ -19,7 +20,13 @@ namespace ViewModel
         {
             _messenger = messenger;
             _noteService = noteService;
+            DeleteCommand = Factory.Create(p => DeleteNote(p));
             _messenger.Register<NoteTreeViewModel>(this, MessengerConstants.ShowNoteInformation, ShowInformation);
+        }
+
+        private void DeleteNote(object p)
+        {
+            // Todo: cant delete without certain ID
         }
 
         private void ShowInformation(NoteTreeViewModel noteInfo)
@@ -36,5 +43,7 @@ namespace ViewModel
                 Model.NoteList = value; OnPropertyChanged();
             }
         }
+
+        public ICommand DeleteCommand { get; set; }
     }
 }

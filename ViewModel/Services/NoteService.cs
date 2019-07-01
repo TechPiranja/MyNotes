@@ -48,9 +48,15 @@ namespace ViewModel.Services
 
             XmlNode notesNode = xmlDoc.SelectSingleNode("//notes");
             XmlNode noteNode = xmlDoc.CreateElement("note");
+
             XmlAttribute attribute = xmlDoc.CreateAttribute("title");
             attribute.Value = title;
             noteNode.Attributes.Append(attribute);
+
+            XmlAttribute attribute2 = xmlDoc.CreateAttribute("noteId");
+            attribute2.Value = DateTime.Now.Ticks.ToString();
+            noteNode.Attributes.Append(attribute2);
+
             noteNode.InnerText = note;
             notesNode.AppendChild(noteNode);
 
@@ -71,6 +77,7 @@ namespace ViewModel.Services
             {
                 var noteItem = new Note
                 {
+                    NoteId = note.Attributes["noteId"].Value,
                     Title = note.Attributes["title"].Value,
                     Content = note.InnerText
                 };

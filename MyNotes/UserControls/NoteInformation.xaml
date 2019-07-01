@@ -13,13 +13,17 @@
             <ItemsControl ItemsSource="{Binding NoteList}">
                 <ItemsControl.ItemTemplate>
                     <ItemContainerTemplate>
-                        <GroupBox  Header="{Binding Title}" Style="{DynamicResource MaterialDesignCardGroupBox}" Margin="16">
+                        <GroupBox Header="{Binding Title}" Style="{DynamicResource MaterialDesignCardGroupBox}" Margin="16">
                             <GroupBox.HeaderTemplate>
                                 <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
+                                    <DockPanel>
                                         <materialDesign:PackIcon Kind="ImageArea" Height="32" Width="32" VerticalAlignment="Center" />
                                         <TextBlock Margin="8,0,0,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}" Text="{Binding}" />
-                                    </StackPanel>
+
+                                        <Button Padding="5" Command="{Binding DeleteCommand, ConverterParameter={Binding NoteId}}" HorizontalAlignment="Right" Background="Transparent" BorderBrush="Transparent">
+                                            <materialDesign:PackIcon Kind="Delete" Height="25" Width="25" VerticalAlignment="Center" />
+                                        </Button>
+                                    </DockPanel>
                                 </DataTemplate>
                             </GroupBox.HeaderTemplate>
                             <TextBlock Margin="6,6,6,6" TextWrapping="Wrap" Text="{Binding Content}"/>
@@ -27,6 +31,6 @@
                     </ItemContainerTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-        </ScrollViewer>        
+        </ScrollViewer>
     </Grid>
 </UserControl>
