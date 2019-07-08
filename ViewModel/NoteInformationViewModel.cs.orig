@@ -4,8 +4,13 @@ using MVVMBase;
 using MVVMBase.MessengerPattern;
 using System;
 using System.Collections.Generic;
+<<<<<<< HEAD
+using System.IO;
 using System.Windows.Input;
+using System.Xml;
+=======
 using System.Windows.Input;
+>>>>>>> added NoteId
 using ViewModel.Helper;
 using ViewModel.Interfaces;
 
@@ -25,9 +30,11 @@ namespace ViewModel
 
         private void DeleteNote(object p)
         {
+<<<<<<< HEAD
             // Todo: cant delete without certain ID
-        }
-
+=======
+            var test = p;
+>>>>>>> added NoteId
         }
 
         private void ShowInformation(NoteTreeViewModel noteInfo)
@@ -44,8 +51,6 @@ namespace ViewModel
                 Model.NoteList = value; OnPropertyChanged();
             }
         }
-
-        public ICommand DeleteCommand { get; set; }
 
         public ICommand DeleteCommand { get; set; }
     }

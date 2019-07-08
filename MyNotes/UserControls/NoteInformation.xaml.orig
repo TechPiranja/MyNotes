@@ -11,19 +11,26 @@
     <Grid>
         <ScrollViewer>
             <ItemsControl x:Name="ItemsControl" ItemsSource="{Binding NoteList}">
-            <ItemsControl ItemsSource="{Binding NoteList}">
                 <ItemsControl.ItemTemplate>
                     <ItemContainerTemplate>
+<<<<<<< HEAD
                         <GroupBox Header="{Binding Title}" Style="{DynamicResource MaterialDesignCardGroupBox}" Margin="16">
+=======
+                        <GroupBox Header="{Binding Title}" Style="{DynamicResource MaterialDesignCardGroupBox}" Margin="16" >
+>>>>>>> added NoteId
                             <GroupBox.HeaderTemplate>
                                 <DataTemplate>
                                     <DockPanel>
-                                    <DockPanel>
                                         <materialDesign:PackIcon Kind="ImageArea" Height="32" Width="32" VerticalAlignment="Center" />
                                         <TextBlock Margin="8,0,0,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}" Text="{Binding}" />
+<<<<<<< HEAD
 
                                         <Button Padding="5" Command="{Binding DeleteCommand, ConverterParameter={Binding NoteId}}" HorizontalAlignment="Right" Background="Transparent" BorderBrush="Transparent">
                                             <materialDesign:PackIcon Kind="Delete" Height="25" Width="25" VerticalAlignment="Center" />
+=======
+                                        <Button Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.DeleteCommand}" CommandParameter="{Binding Path=NoteId, RelativeSource={RelativeSource NoteList}}" DockPanel.Dock="Right" Width="50" HorizontalAlignment="Right" Background="Transparent" BorderBrush="Transparent">
+                                            <materialDesign:PackIcon Kind="Delete" HorizontalAlignment="Center" Height="32" Width="32" VerticalAlignment="Center" />
+>>>>>>> added NoteId
                                         </Button>
                                     </DockPanel>
                                 </DataTemplate>

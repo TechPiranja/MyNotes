@@ -1,0 +1,14 @@
+﻿namespace Model.Interfaces
+{
+    public interface INote
+    {
+        string NoteId { get; set; }
+        string Title { get; set; }
+<<<<<<< HEAD
+        string Content { get; set; }        
+=======
+        string NoteId { get; set; }
+        string Content { get; set; }
+>>>>>>> added NoteId
+    }
+}
