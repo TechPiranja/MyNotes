@@ -5,7 +5,6 @@ using MVVMBase.MessengerPattern;
 using System;
 using System.Collections.Generic;
 using System.Windows.Input;
-using System.Windows.Input;
 using ViewModel.Helper;
 using ViewModel.Interfaces;
 
@@ -28,8 +27,6 @@ namespace ViewModel
             // Todo: cant delete without certain ID
         }
 
-        }
-
         private void ShowInformation(NoteTreeViewModel noteInfo)
         {
             NoteList = _noteService.GetNotesFromFile(noteInfo.Path);
@@ -44,8 +41,6 @@ namespace ViewModel
                 Model.NoteList = value; OnPropertyChanged();
             }
         }
-
-        public ICommand DeleteCommand { get; set; }
 
         public ICommand DeleteCommand { get; set; }
     }
