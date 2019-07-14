@@ -30,6 +30,7 @@ namespace ViewModel
         private void ShowInformation(NoteTreeViewModel noteInfo)
         {
             NoteList = _noteService.GetNotesFromFile(noteInfo.Path);
+            NotePath = noteInfo.Path;
         }
 
         public ICollection<INote> NoteList
@@ -39,6 +40,16 @@ namespace ViewModel
             {
                 if (value == Model.NoteList) return;
                 Model.NoteList = value; OnPropertyChanged();
+            }
+        }
+
+        public string NotePath
+        {
+            get => Model.NotePath;
+            set
+            {
+                if (value == Model.NotePath) return;
+                Model.NotePath = value; OnPropertyChanged();
             }
         }
 

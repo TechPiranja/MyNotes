@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Xml;
 using ViewModel.Interfaces;
@@ -69,9 +70,9 @@ namespace ViewModel.Services
             var noteList = new Collection<INote>();
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(path);
-            XmlNodeList noteNode = xmlDoc.SelectNodes("//notes/note");
+            XmlNodeList nodeList = xmlDoc.SelectNodes("//notes/note");
 
-            foreach (XmlNode note in noteNode)
+            foreach (XmlNode note in noteList)
             {
                 var noteItem = new Note
                 {
@@ -84,6 +85,19 @@ namespace ViewModel.Services
             }
 
             return noteList;
+        }
+
+        public void DeleteNote(string path, string noteId)
+        {
+            if (File.GetAttributes(path).HasFlag(FileAttributes.Directory))
+                return;
+
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(path);
+            XmlNode nodeList = xmlDoc.SelectSingleNode($"/Names/Name[@noteId='{noteId}']");
+
+            //var nodeToDelete = nodeList. .FirstOrDefault(n => n.NoteId == noteId);
+            //nodeList.Remove(nodeToDelete);
         }
 
         private string NoteFolderPath { get; set; }
