@@ -4,6 +4,7 @@ using MVVMBase;
 using MVVMBase.MessengerPattern;
 using System;
 using System.Windows.Input;
+using ViewModel.Helper;
 using ViewModel.Interfaces;
 
 namespace ViewModel
@@ -22,6 +23,7 @@ namespace ViewModel
         private void SaveNote()
         {
             _noteService.SaveQuickNote(Title, Note);
+            _messenger.Send(true, MessengerConstants.RefreshNoteList);
         }
 
         public ICommand SaveNoteCommand { get; set; }

@@ -72,7 +72,7 @@ namespace ViewModel.Services
             xmlDoc.Load(path);
             XmlNodeList nodeList = xmlDoc.SelectNodes("//notes/note");
 
-            foreach (XmlNode note in noteList)
+            foreach (XmlNode note in nodeList)
             {
                 var noteItem = new Note
                 {
@@ -94,10 +94,9 @@ namespace ViewModel.Services
 
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(path);
-            XmlNode nodeList = xmlDoc.SelectSingleNode($"/Names/Name[@noteId='{noteId}']");
-
-            //var nodeToDelete = nodeList. .FirstOrDefault(n => n.NoteId == noteId);
-            //nodeList.Remove(nodeToDelete);
+            XmlNode node = xmlDoc.SelectSingleNode($"/notes/note[@noteId='{noteId}']");            
+            node.ParentNode.RemoveChild(node);
+            xmlDoc.Save(path);
         }
 
         private string NoteFolderPath { get; set; }

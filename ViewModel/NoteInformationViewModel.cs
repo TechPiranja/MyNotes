@@ -20,11 +20,18 @@ namespace ViewModel
             _noteService = noteService;
             DeleteCommand = Factory.Create(p => DeleteNote(p));
             _messenger.Register<NoteTreeViewModel>(this, MessengerConstants.ShowNoteInformation, ShowInformation);
+            _messenger.Register<bool>(this, MessengerConstants.RefreshNoteList, RefreshNoteList);
+        }
+
+        private void RefreshNoteList(bool test)
+        {
+            NoteList = _noteService.GetNotesFromFile(NotePath);
         }
 
         private void DeleteNote(object p)
         {
-            // Todo: cant delete without certain ID
+            _noteService.DeleteNote(NotePath, (string)p);
+            NoteList = _noteService.GetNotesFromFile(NotePath);
         }
 
         private void ShowInformation(NoteTreeViewModel noteInfo)

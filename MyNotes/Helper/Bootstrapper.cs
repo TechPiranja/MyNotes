@@ -32,12 +32,11 @@ namespace View.Helper
 
             // Register ViewModel
             builder.RegisterAssemblyTypes(typeof(TrayViewModel).Assembly)
-                .Where(t => t.Name.EndsWith("ViewModel") && !t.Name.StartsWith("Mock")).AsImplementedInterfaces();
+                .Where(t => t.Name.EndsWith("ViewModel") && !t.Name.StartsWith("Mock")).AsImplementedInterfaces().SingleInstance();
 
             // register instance of Messenger as its implemented interface as a singleton class.
             builder.RegisterType<Messenger>().As<IMessenger>().SingleInstance();
             builder.RegisterType<DialogService>().As<IDialogService>().SingleInstance();
-            //builder.RegisterType<TVDirectoryModelBuilder>().AsImplementedInterfaces();
 
             // register config repository
             //builder.RegisterType<XMLFile>().AsImplementedInterfaces();
