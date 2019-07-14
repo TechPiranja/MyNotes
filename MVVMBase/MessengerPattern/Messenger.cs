@@ -67,17 +67,23 @@ namespace MVVMBase.MessengerPattern
         ///<inheritdoc />
         public void Send<TNotification>(TNotification notification, string identCode)
         {
-            var type = typeof(TNotification);
-            var typeActionIdentifiers = _references[type];
-            foreach (ActionIdentifier ai in typeActionIdentifiers)
+            try
             {
-                if (ai.IdentificationCode == identCode)
+                var type = typeof(TNotification);
+                var typeActionIdentifiers = _references[type];
+                foreach (ActionIdentifier ai in typeActionIdentifiers)
                 {
-                    if (ai.Action is IActionParameter actionParameter)
-                        actionParameter.ExecuteWithParameter(notification);
-                    else
-                        ai.Action.Execute();
+                    if (ai.IdentificationCode == identCode)
+                    {
+                        if (ai.Action is IActionParameter actionParameter)
+                            actionParameter.ExecuteWithParameter(notification);
+                        else
+                            ai.Action.Execute();
+                    }
                 }
+            }
+            catch
+            {
             }
         }
 
